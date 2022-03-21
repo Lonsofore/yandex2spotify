@@ -12,9 +12,9 @@ from spotipy.exceptions import SpotifyException
 from spotipy.oauth2 import SpotifyOAuth
 from yandex_music import Client, Artist
 
-CLIENT_ID = '9b3b6782c67a4a8b9c5a6800e09edb27'
-CLIENT_SECRET = '7809b5851f1d4219963a3c0735fd5bea'
-REDIRECT_URI = 'https://open.spotify.com'
+CLIENT_ID = ''
+CLIENT_SECRET = ''
+REDIRECT_URI = ''
 MAX_REQUEST_RETRIES = 5
 
 logging.basicConfig(
@@ -54,7 +54,7 @@ def handle_spotify_exception(func):
                 return func(*args, **kwargs)
                 break
             except SpotifyException as exception:
-                if exception.http_status != 429:
+                if exception.http_status != 429 and exception.http_status != 404:
                     raise exception
 
                 if 'retry-after' in exception.headers:

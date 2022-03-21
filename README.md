@@ -6,6 +6,13 @@ Simple Python script, that allow to import favorite tracks, playlists, albums an
 pip3 install -r requirements.txt
 ```
 
+Put your Spotify app credentials (get them [here](https://developer.spotify.com/dashboard/applications)) to importer.py, lines 15-17:
+```python
+CLIENT_ID = ''
+CLIENT_SECRET = ''
+REDIRECT_URI = ''
+```
+
 ## Usage
 1) Using credentials:
 ```bash
